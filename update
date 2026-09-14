@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo dnf upgrade -y
+sudo dnf autoremove -y
+flatpak update -y
+flatpak --user update -y
+flatpak uninstall --unused -y
+flatpak uninstall --user --unused -y
+code --update-extensions -y
