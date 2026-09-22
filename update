@@ -1,7 +1,9 @@
 #!/bin/bash
 
-sudo dnf upgrade -y
-sudo dnf autoremove -y
+antidote update
+sudo su -
+dnf upgrade -y
+dnf autoremove -y
 flatpak update -y
 flatpak --user update -y
 flatpak uninstall --unused -y
