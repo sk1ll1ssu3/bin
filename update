@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 antidote update
-dnf upgrade -y
-dnf autoremove -y
+sudo dnf upgrade -y
+sudo dnf autoremove -y
 flatpak update -y
 flatpak --user update -y
 flatpak uninstall --unused -y
