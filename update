@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
 
 antidote update
-sudo su -
 dnf upgrade -y
 dnf autoremove -y
 flatpak update -y
