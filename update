@@ -1,10 +1,13 @@
 #!/bin/zsh -i
 
-antidote update
-sudo dnf upgrade -y
-sudo dnf autoremove -y
+yay -Syu --noconfirm
+
+orphans=$(pacman -Qtdq)
+if [[ -n "$orphans" ]]; then
+    sudo pacman -Rns --noconfirm $orphans
+fi
+
 flatpak update -y
 flatpak --user update -y
 flatpak uninstall --unused -y
 flatpak uninstall --user --unused -y
-rustup update
