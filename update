@@ -6,8 +6,3 @@ orphans=$(pacman -Qtdq)
 if [[ -n "$orphans" ]]; then
     sudo pacman -Rns --noconfirm $orphans
 fi
-
-flatpak update -y
-flatpak --user update -y
-flatpak uninstall --unused -y
-flatpak uninstall --user --unused -y
