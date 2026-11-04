@@ -1,8 +1,10 @@
 #!/bin/zsh -i
 
 yay -Syu --noconfirm
-
-orphans=$(pacman -Qtdq)
-if [[ -n "$orphans" ]]; then
-    sudo pacman -Rns --noconfirm $orphans
+sudo pacman -Sc --noconfirm
+yay -Sc --noconfirm
+if [ -n "$(pacman -Qtdq)" ]; then
+    sudo pacman -Rns --noconfirm $(pacman -Qtdq)
 fi
+sudo journalctl --vacuum-time=7d
+systemd-tmpfiles --clean
