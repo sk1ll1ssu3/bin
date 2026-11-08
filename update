@@ -9,3 +9,4 @@ fi
 sudo journalctl --vacuum-time=7d
 sudo systemd-tmpfiles --clean
 antidote update
+rustup update
