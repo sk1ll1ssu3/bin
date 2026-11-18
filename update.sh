@@ -7,3 +7,7 @@ fi
 sudo journalctl --vacuum-time=7d
 sudo systemd-tmpfiles --clean
 rustup update
+if [ "$1" -eq "--update-ml4w" ]
+then
+  bash <(curl -s https://ml4w.com/os/stable)
+fi
