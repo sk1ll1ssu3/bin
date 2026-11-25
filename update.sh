@@ -1,4 +1,4 @@
 #!/bin/bash
 
 sudo dnf upgrade --refresh
-sudo dnf autoremove
+sudo dnf autoremove -y
